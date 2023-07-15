@@ -7,8 +7,6 @@ pi = None
 MAX_SPEED = 480
 
 class Motor(object):
-    MAX_SPEED = _max_speed
-
     def __init__(self, pi, pwm_pin, dir_pin, en_pin):
         self.pi = pi
         self.pwm_pin = pwm_pin
@@ -42,7 +40,7 @@ class Motors(object):
         self.motor2 = Motor(self.pi, 13, 25, 23)
 
     def io_init():
-      if self.pi not None:
+      if self.pi is not None:
         return
       pi = pigpio.pi()
       pi.set_mode(12, pigpio.OUTPUT)
