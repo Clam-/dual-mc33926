@@ -39,7 +39,7 @@ class Motors(object):
         self.motor1 = Motor(self.pi, 12, 24, 22)
         self.motor2 = Motor(self.pi, 13, 25, 23)
 
-    def io_init():
+    def io_init(self):
       if self.pi is not None:
         return
       pi = pigpio.pi()
