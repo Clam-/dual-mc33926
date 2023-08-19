@@ -16,22 +16,22 @@ try:
     print("\nMotor 1 forward: ")
     for s in test_forward_speeds:
         motors.motor1.setSpeed(s)
-        print(s, end="")
+        print(f"\r{s}", end="")
 
     print("\nMotor 1 reverse: ")
     for s in test_reverse_speeds:
         motors.motor1.setSpeed(s)
-        print(s, end="")
+        print(f"\r{s}", end="")
 
     print("\nMotor 2 forward: ")
     for s in test_forward_speeds:
         motors.motor2.setSpeed(s)
-        print(s, end="")
+        print(f"\r{s}", end="")
 
     print("\nMotor 2 reverse: ")
     for s in test_reverse_speeds:
         motors.motor2.setSpeed(s)
-        print(s, end="")
+        print(f"\r{s}", end="")
 
 finally:
   # Stop the motors, even if there is an exception
