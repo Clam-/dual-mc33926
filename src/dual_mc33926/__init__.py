@@ -4,7 +4,7 @@ pi = None
 # Motor speeds for this library are specified as numbers
 # between -MAX_SPEED and MAX_SPEED, inclusive.
 # 19.2 MHz / 2 / 480 = 20 kHz
-MAX_SPEED = 480
+MAX_SPEED = 1000000
 
 class Motor(object):
     def __init__(self, pi, pwm_pin, dir_pin, en_pin):
@@ -30,7 +30,7 @@ class Motor(object):
             speed = MAX_SPEED
 
         self.pi.write(self.dir_pin, dir_value)
-        self.pi.set_PWM_dutycycle(self.pwm_pin, speed)
+        self.pi.hardware_PWM(self.pwm_pin, 20000, speed) # 20kHZ
 
 class Motors(object):
     def __init__(self):
@@ -45,10 +45,6 @@ class Motors(object):
       pi = pigpio.pi()
       pi.set_mode(12, pigpio.OUTPUT)
       pi.set_mode(13, pigpio.OUTPUT)
-      pi.set_PWM_range(12,MAX_SPEED)
-      pi.set_PWM_range(13,MAX_SPEED)
-      pi.set_PWM_frequency(12,20000)
-      pi.set_PWM_frequency(13,20000)
       pi.set_mode(22, pigpio.OUTPUT)
       pi.set_mode(23, pigpio.OUTPUT)
       pi.set_mode(24, pigpio.OUTPUT)

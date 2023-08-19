@@ -1,13 +1,13 @@
 from __future__ import print_function
 import time
-from dual_mc33926_rpi import motors, MAX_SPEED
+from dual_mc33926 import motors, MAX_SPEED
 
 # Set up sequences of motor speeds.
-test_forward_speeds = list(range(0, MAX_SPEED, 1)) + \
-  [MAX_SPEED] * 200 + list(range(MAX_SPEED, 0, -1)) + [0]  
+test_forward_speeds = list(range(0, MAX_SPEED, 10)) + \
+  [MAX_SPEED] * 200 + list(range(MAX_SPEED, 0, -10)) + [0]
 
-test_reverse_speeds = list(range(0, -MAX_SPEED, -1)) + \
-  [-MAX_SPEED] * 200 + list(range(-MAX_SPEED, 0, 1)) + [0]  
+test_reverse_speeds = list(range(0, -MAX_SPEED, -10)) + \
+  [-MAX_SPEED] * 200 + list(range(-MAX_SPEED, 0, 10)) + [0]
 
 try:
     motors.enable()
