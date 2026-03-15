@@ -5,12 +5,16 @@ to use the pigpio interface library.
 
 Setup:
 * Install the pigpio software from the raspi distribution:
-```sudo apt install pigpio```
-* Create a venv. e.g. ``` python3 -m venv ~/env```
+`sudo apt install pigpio`
+* Create a venv. e.g. ` python3 -m venv ~/env`
 * Clone and install this module which should also install the pigpio python dependency e.g.:  
-```git clone <this URL>
+```
+git clone <this URL>
 cd dual-mc33926
 ~/env/vin/pip install .```
 
-Or dev mode with ```~/env/bin/pip install -e .```
+Or dev mode with ```~/env/bin/pip install -e .
+```
 Note: Dev mode needs quite modern setuptools/pip.
+
+Archived. Now use: https://github.com/Clam-/rgpio-dual-mc33926
